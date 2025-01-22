@@ -8,13 +8,13 @@ use Auth;
 
 class UpdateProfile extends Component
 {
-    public $name, $last_name, $email, $phone, $profession, $profile_photo, $web_url, $password;
+    public $name, $second_name, $email, $phone_number, $profession, $profile_photo, $web_url, $password;
 
     public function mount()
     {
         $user = Auth::user();
         $this->name = $user->name;
-        $this->last_name = $user->last_name;
+        $this->second_name = $user->second_name;
         $this->email = $user->email;
         $this->phone_number = $user->phone_number;
         $this->profession = $user->profession;
@@ -29,7 +29,7 @@ class UpdateProfile extends Component
 
         $user->update([
             'name' => $this->first_name,
-            'last_name' => $this->last_name,
+            'second_name' => $this->second_name,
             'email' => $this->email,
             'phone_number' => $this->phone_number,
             'profession' => $this->profession,

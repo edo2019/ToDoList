@@ -28,7 +28,7 @@ class UpdateProfile extends Component
         $user = Auth::user();
 
         $user->update([
-            'name' => $this->first_name,
+            'name' => $this->name,
             'second_name' => $this->second_name,
             'email' => $this->email,
             'phone_number' => $this->phone_number,

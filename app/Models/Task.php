@@ -7,10 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Task extends Model
 {
     //
+    protected $rules = [
+        'newTaskTitle' => 'required|min:3|max:255',
+        'newTaskCategory' => 'required|in:official,personal,others', // Category is required and validated
+    ];
     protected $fillable =
     [
         'title',
-        'complete', 
+        'category', 
     ];
     public function user()
 {

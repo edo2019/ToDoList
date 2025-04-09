@@ -45,6 +45,11 @@
     <div class="mb-4 flex">
         <input type="text" wire:model="newTaskTitle" placeholder="Add a new task"
             class="border px-4 py-2 rounded-l w-full">
+        {{-- <select wire:model="newTaskCategory" class="border px-2 py-2 rounded-none">
+            <option value="official">Official</option>
+            <option value="personal">Personal</option>
+            <option value="others">Others</option>
+        </select> --}}
         <select wire:model="newTaskCategory" class="border px-2 py-2 rounded-none">
             <option value="official">Official</option>
             <option value="personal">Personal</option>

@@ -47,6 +47,24 @@ public function loadTasks()
     $this->tasks = $allTasks; // Keep this for potential "All Categories" view
 }
 
+// public function addTask()
+// {
+//     $this->validate();
+
+//     $userId = auth()->id();
+
+//     if (!$userId) {
+//         $userId = self::GUEST_USER_ID;
+//     }
+
+//     User::find($userId)->tasks()->create([
+//         'title' => $this->newTaskTitle,
+//         'category' => $this->newTaskCategory,
+//     ]);
+
+//     $this->newTaskTitle = '';
+//     $this->loadTasks();
+// }
 public function addTask()
 {
     $this->validate();
@@ -56,6 +74,8 @@ public function addTask()
     if (!$userId) {
         $userId = self::GUEST_USER_ID;
     }
+
+  //  dd($this->newTaskCategory); // Add this line
 
     User::find($userId)->tasks()->create([
         'title' => $this->newTaskTitle,

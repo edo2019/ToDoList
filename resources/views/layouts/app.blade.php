@@ -15,9 +15,26 @@
 </nav> --}}
 
 <body class="bg-gray-100 min-h-screen">
+
+    <!-- Sidebar Component -->
+    {{-- <x-app.sidebar /> --}}
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col">
+
+        <!-- Navbar Component -->
+        {{-- <x-app.navbar /> --}}
+
+        <!-- Content Section -->
+        <main class="flex-1 p-6 bg-gray-100">
+            {{ $slot }}
+        </main>
+    </div>
+    </div>
+    {{--
     <div class="container mx-auto p-4">
         {{ $slot }}
-    </div>
+    </div> --}}
     <livewire:scripts />
 </body>
 

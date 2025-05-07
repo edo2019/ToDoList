@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\DocumentController;
 use Illuminate\Support\Facades\Route;
 
 use App\Livewire\TodoList;
 use App\Livewire\Login;
 use App\Livewire\Profile\UpdateProfile;
+use App\Http\Livewire\Documentlist;
 
 use App\Livewire\RegisterUser;
 Route::get('/', TodoList::class)->name('todo-list');
@@ -17,9 +19,13 @@ Route::get('/', TodoList::class)->name('todo-list');
 
 // Protect the To-Do List and Update Profile routes with the 'auth' middleware
 Route::middleware('auth')->group(function () {
-   
+
     Route::get('/update-profile', UpdateProfile::class)->name('update-profile');
 });
 
+Route::resource('documents', DocumentController::class);
+
+
+Route::get('/documents', Documentlist::class)->name('documents');
 
 

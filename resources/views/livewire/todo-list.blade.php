@@ -180,3 +180,25 @@
         @endif
     </div>
 </div>
+
+<h1>Documents</h1>
+<a href="{{ route('documents.create') }}">Upload New Document</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($documents as $document)
+            <tr>
+                <td>{{ $document->name }}</td>
+                <td>
+                    <a href="{{ route('documents.preview', $document) }}" target="_blank">Preview</a>
+                </td>
+            </tr>
+        @endforeach
+    </tbody>
+</table>
